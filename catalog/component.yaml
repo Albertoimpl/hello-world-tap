@@ -1,13 +1,13 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: hello-template
-  description: hello-template
+  name: hello-my-apis
+  description: hello-my-apis
   annotations:
-    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=hello-template'
+    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=hello-my-apis'
 spec:
   type: service
   lifecycle: experimental
   owner: default-team
   providesApis:
-    - agify-api
+    - openapi-test-api
