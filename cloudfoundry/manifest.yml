@@ -1,5 +1,0 @@
----
-applications:
-- name: hello-world
-  env:
-    APP_MESSAGE: World
