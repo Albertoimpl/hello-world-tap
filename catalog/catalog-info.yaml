@@ -6,7 +6,6 @@ metadata:
   annotations:
     'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=hello-my-apis'
 spec:
-  type: service
   lifecycle: experimental
   owner: default-team
   targets:
