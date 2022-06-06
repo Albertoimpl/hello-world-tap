@@ -3,6 +3,8 @@ kind: API
 metadata:
   name: petstore-dynamic
   description: the classic petstore API from swagger.io, pulled from a live endpoint.
+  annotations:
+    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=hello-template'
 spec:
   type: openapi
   lifecycle: experimental

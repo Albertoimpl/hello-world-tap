@@ -1,16 +1,10 @@
 apiVersion: backstage.io/v1alpha1
-kind: Component
+kind: Location
 metadata:
-  name: hello-world
-  description: Hello World sample project for Spring Boot
-  tags:
-  - java
-  - spring
-  - cloud-foundry
-  - tanzu
+  name: hello-template
+  description: My Test Location
   annotations:
-    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=hello-world'
+    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=hello-template'
 spec:
-  type: service
-  lifecycle: experimental
-  owner: default-team
+  targets:
+    - ./api.yaml
