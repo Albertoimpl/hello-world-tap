@@ -6,6 +6,9 @@ metadata:
   annotations:
     'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=hello-template'
 spec:
+  type: service
+  lifecycle: experimental
+  owner: default-team
   targets:
     - ./api.yaml
     - ./component.yaml
