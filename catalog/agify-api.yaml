@@ -35,3 +35,20 @@ spec:
                   schema:
                     type: string
                   examples: {}
+      /age:
+        get:
+          description: another endpoint
+          parameters:
+            - name: name
+              in: query
+              schema:
+                type: string
+              example: alberto
+          responses:
+            '200':
+              description: Auto generated using Swagger Inspector
+              content:
+                application/json; charset=utf-8:
+                  schema:
+                    type: string
+                  examples: {}
