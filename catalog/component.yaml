@@ -10,4 +10,4 @@ spec:
   lifecycle: experimental
   owner: default-team
   providesApis:
-    - openapi-test-api-hello-apis
+    - openapi-agify-apis

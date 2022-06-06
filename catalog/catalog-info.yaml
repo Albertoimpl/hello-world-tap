@@ -10,5 +10,5 @@ spec:
   lifecycle: experimental
   owner: default-team
   targets:
-    - ./api.yaml
+    - ./agify-api.yaml
     - ./component.yaml

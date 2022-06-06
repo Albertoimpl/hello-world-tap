@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: openapi-test-api-hello-apis
+  name: openapi-agify-apis
   description: the classic petstore API from swagger.io, pulled from a live endpoint.
   annotations:
     'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=hello-my-apis'
@@ -12,7 +12,7 @@ spec:
   definition: |
     openapi: 3.0.1
     info:
-      title: agifyAllApis
+      title: agifyApis
       description: defaultDescription
       version: '0.1'
     servers:
