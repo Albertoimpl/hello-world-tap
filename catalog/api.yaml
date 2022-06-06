@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: openapi-test-api
+  name: openapi-test-api-hello-apis
   description: the classic petstore API from swagger.io, pulled from a live endpoint.
   annotations:
     'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=hello-my-apis'
