@@ -10,45 +10,74 @@ spec:
   lifecycle: experimental
   owner: default-team
   definition: |
-    openapi: 3.0.1
-    info:
-      title: agifyApis
-      description: defaultDescription
-      version: '0.1'
-    servers:
-      - url: https://api.agify.io
-    paths:
-      /:
-        get:
-          description: Auto generated using Swagger Inspector
-          parameters:
-            - name: name
-              in: query
-              schema:
-                type: string
-              example: kris
-          responses:
-            '200':
-              description: Auto generated using Swagger Inspector
-              content:
-                application/json; charset=utf-8:
-                  schema:
-                    type: string
-                  examples: {}
-      /age:
-        get:
-          description: another endpoint
-          parameters:
-            - name: name
-              in: query
-              schema:
-                type: string
-              example: alberto
-          responses:
-            '200':
-              description: Auto generated using Swagger Inspector
-              content:
-                application/json; charset=utf-8:
-                  schema:
-                    type: string
-                  examples: {}
+    {
+      "openapi": "3.0.1",
+      "info": {
+        "title": "agifyApis",
+        "description": "defaultDescription",
+        "version": "0.1"
+      },
+      "servers": [
+        {
+          "url": "https://api.agify.io"
+        }
+      ],
+      "paths": {
+        "/": {
+          "get": {
+            "description": "Auto generated using Swagger Inspector",
+            "parameters": [
+              {
+                "name": "name",
+                "in": "query",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "kris"
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "Auto generated using Swagger Inspector",
+                "content": {
+                  "application/json; charset=utf-8": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "examples": {}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/age": {
+          "get": {
+            "description": "another endpoint",
+            "parameters": [
+              {
+                "name": "name",
+                "in": "query",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "alberto"
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "Auto generated using Swagger Inspector",
+                "content": {
+                  "application/json; charset=utf-8": {
+                    "schema": {
+                      "type": "string"
+                    },
+                    "examples": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
