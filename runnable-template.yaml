@@ -1,0 +1,42 @@
+apiVersion: carto.run/v1alpha1
+kind: ClusterTemplate
+metadata:
+  name: runnable-template
+spec:
+  params:
+    - default: default
+      name: serviceAccount
+  ytt: |
+    #@ load("@ytt:data", "data")
+    #@ load("@ytt:json", "json")
+    #@ load("@ytt:base64", "base64")
+
+
+
+    #@ def param(key):
+    #@   if not key in data.values.params:
+    #@     return None
+    #@   end
+    #@   return data.values.params[key]
+    #@ end
+
+    ---
+    apiVersion: carto.run/v1alpha1
+    kind: Runnable
+    metadata:
+      name: #@ data.values.workload.metadata.name + "-runnable-template"
+      labels:
+        app.kubernetes.io/component: runnable-template
+        #@ if/end hasattr(data.values.workload.metadata, "labels") and hasattr(data.values.workload.metadata.labels, "app.kubernetes.io/part-of"):
+        app.kubernetes.io/part-of: #@ data.values.workload.metadata.labels["app.kubernetes.io/part-of"]
+    spec:
+      serviceAccountName: default
+
+      runTemplateRef:
+        name: runnable-tekton-taskrun
+
+      inputs:
+        params: []
+        taskRef:
+          kind: ClusterTask
+          name: runnable-cluster-task

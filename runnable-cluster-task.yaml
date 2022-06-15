@@ -1,0 +1,18 @@
+apiVersion: tekton.dev/v1beta1
+kind: ClusterTask
+metadata:
+  name: runnable-cluster-task
+spec:
+  description: |-
+    Test Alberto and Nacho.
+  params:
+    - default: main
+      description: something
+      name: something
+      type: string
+  steps:
+  - image: ubuntu
+    script: |
+      #!/usr/bin/env bash
+      echo "Hello from Custom test!" 
+

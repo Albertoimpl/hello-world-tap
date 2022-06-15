@@ -1,12 +1,20 @@
 apiVersion: carto.run/v1alpha1
 kind: Workload
 metadata:
-  name: hello-my-apis
+  name: hello-world
   labels:
-    apps.tanzu.vmware.com/workload-type: web
+    apps.tanzu.vmware.com/workload-type: gatewayweb
     apps.tanzu.vmware.com/has-tests: true
-    app.kubernetes.io/part-of: source-test-scan-to-url
+    app.kubernetes.io/part-of: source-test-scan-to-url-with-gateway-template
 spec:
+  params:
+    - name: routes
+      value:
+        - predicates:
+            - Path=/hello
+            - Method=GET
+          filters:
+            - RateLimit=3,6s,{claim:client_id}
   source:
     git:
       url: https://github.com/Albertoimpl/hello-world-tap

@@ -1,0 +1,20 @@
+apiVersion: carto.run/v1alpha1
+kind: Workload
+metadata:
+  name: runnable-web-app
+  labels:
+    apps.tanzu.vmware.com/workload-type: runnable-web
+    app.kubernetes.io/part-of: runnable-source-test-scan-to-url
+spec:
+  env:
+    - name: APP_MESSAGE
+      value: World TAP with runnable
+  params:
+    - name: annotations
+      value:
+        autoscaling.knative.dev/minScale: "1"
+  source:
+    git:
+      url: https://github.com/sample-accelerators/hello-world
+      ref:
+        branch: main
