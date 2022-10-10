@@ -1,0 +1,21 @@
+apiVersion: carto.run/v1alpha1
+kind: Workload
+metadata:
+  name: hello-world
+  labels:
+    apps.tanzu.vmware.com/has-tests: "true"
+    apps.tanzu.vmware.com/workload-type: web
+    app.kubernetes.io/part-of: source-test-scan-to-url
+spec:
+  env:
+    - name: APP_MESSAGE
+      value: World TAP1
+  params:
+    - name: annotations
+      value:
+        autoscaling.knative.dev/minScale: "1"
+  source:
+    git:
+      url: https://github.com/Albertoimpl/hello-world-tap
+      ref:
+        branch: main

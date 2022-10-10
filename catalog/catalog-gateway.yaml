@@ -1,0 +1,14 @@
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: hello-gateway
+  description: My Test Location
+  annotations:
+    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=spring-cloud-gateway,app=hello-world'
+spec:
+  type: service
+  lifecycle: alpha
+  owner: dev-team-2
+  system: hello-world
+  targets:
+    - ./component-gateway.yaml
