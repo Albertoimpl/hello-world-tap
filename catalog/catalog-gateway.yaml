@@ -6,9 +6,7 @@ metadata:
   annotations:
     'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=spring-cloud-gateway,app=hello-world'
 spec:
-  type: service
-  lifecycle: alpha
   owner: dev-team-2
-  system: hello-world
+  lifecycle: alpha
   targets:
     - ./component-gateway.yaml
